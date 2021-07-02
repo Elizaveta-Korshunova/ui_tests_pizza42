@@ -30,10 +30,10 @@ public class PromotionTests {
         driver.quit();
     }
     @Test
-    public void Promotion () {
-        helper.CloseAdvertisement();
+    public void promotion () {
+        helper.closeAdvertisement();
         WebElement promotions = driver.findElement(By.xpath("(//a[contains(@class, 'menu-item')] )[3]"));
         promotions.click();
-        Assert.assertNotNull(driver.findElement(By.xpath("//div[contains(@class, 'default-content')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//div[contains(@class, 'default-content')]")).isDisplayed());
     }
 }

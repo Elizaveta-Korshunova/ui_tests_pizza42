@@ -29,11 +29,11 @@ public class MenuTest {
         driver.quit();
     }
     @Test
-    public void Menu() {
-        helper.CloseAdvertisement();
+    public void menu() {
+        helper.closeAdvertisement();
         WebElement menu = driver.findElement(By.xpath("(//a[contains(@class, 'menu-item')] )[1]"));
         menu.click();
-        Assert.assertNotNull(driver.findElement(By.xpath("//h2[contains(@class, 'product-list-tag-title')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//h2[contains(@class, 'product-list-tag-title')]")).isDisplayed());
         driver.quit();
     }
 }

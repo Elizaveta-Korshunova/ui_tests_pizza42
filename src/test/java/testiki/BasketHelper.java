@@ -14,7 +14,7 @@ public class BasketHelper {
         this.driver = driver;
     }
 
-    public void Basket () {
+    public void basket () {
        try {
            WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
            blockDesserts.click(); // перехожу на вкладку "Десерт"
@@ -23,22 +23,22 @@ public class BasketHelper {
            WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
            diameter.click(); // выбираю диаметр 30см
            Thread.sleep(5000);
-           clickHelper.Buy();
+           clickHelper.buy();
            Thread.sleep(5000);
-           clickHelper.Close();
+           clickHelper.close();
            WebElement blockPizzaAdditives = driver.findElement(By.xpath("(//a[contains(text(), 'Добавки к пицце')]) [1]"));
            blockPizzaAdditives.click(); // перехожу на вкладку "Добавки к пицце"
            WebElement pineapple = driver.findElement(By.xpath("//*[contains(text(), 'Ананасы консервированные')]"));
            pineapple.click(); // открывать ананасики
            Thread.sleep(5000);
-           clickHelper.Buy();
+           clickHelper.buy();
            Thread.sleep(5000);
-           clickHelper.Close();
+           clickHelper.close();
            Thread.sleep(5000);
            WebElement bacon = driver.findElement(By.xpath("(//*[contains(text(), 'Бекон')]) [2]"));
            bacon.click(); // открывать бекон
            Thread.sleep(5000);
-           clickHelper.Buy();
+           clickHelper.buy();
            Thread.sleep(5000);
            WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
            basket.click(); // перехожу в корзину

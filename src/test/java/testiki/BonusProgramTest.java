@@ -30,10 +30,10 @@ public class BonusProgramTest {
         driver.quit();
     }
     @Test
-    public void BonusProgram () {
-        helper.CloseAdvertisement();
+    public void bonusProgram () {
+        helper.closeAdvertisement();
         WebElement bonusProgram = driver.findElement(By.xpath("(//a[contains(@class, 'menu-item')] )[4]"));
         bonusProgram.click();
-        Assert.assertNotNull(driver.findElement(By.xpath("//div[contains(@class, 'default-content')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//div[contains(@class, 'default-content')]")).isDisplayed());
     }
 }

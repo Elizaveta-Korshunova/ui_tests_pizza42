@@ -30,10 +30,10 @@ public class AboutUsTest {
         driver.quit();
     }
     @Test
-    public void AboutUs () {
-        helper.CloseAdvertisement();
+    public void aboutUs () {
+        helper.closeAdvertisement();
         WebElement aboutUs = driver.findElement(By.xpath("(//a[contains(@class, 'menu-item')] )[5]"));
         aboutUs.click();
-        Assert.assertNotNull(driver.findElement(By.xpath("//div[contains(@class, 'default-content')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//div[contains(@class, 'default-content')]")).isDisplayed());
     }
 }

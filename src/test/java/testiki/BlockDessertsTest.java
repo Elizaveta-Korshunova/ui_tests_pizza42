@@ -30,10 +30,10 @@ public class BlockDessertsTest {
         driver.quit();
     }
     @Test
-    public void BlockDesserts () {
-        helper.CloseAdvertisement();
+    public void blockDesserts () {
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click();
-        Assert.assertNotNull(driver.findElement(By.xpath("//h1[contains(@class, 'product-list-tag-title')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//h1[contains(@class, 'product-list-tag-title')]")).isDisplayed());
     }
 }

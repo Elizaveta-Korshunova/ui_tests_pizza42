@@ -11,7 +11,7 @@ import java.time.Duration;
 public class AdvertisingCloseTest {
 
     @Test
-    public void advertising() {
+    public void advertising() { // посмотреть, искл!
         {
             System.setProperty("webdriver.chrome.driver", "/Users/user/Downloads/chromedriver");
             WebDriver driver = new ChromeDriver();
@@ -21,6 +21,7 @@ public class AdvertisingCloseTest {
             boolean rek = driver.findElement(By.xpath("//div[contains(@class, 'modal-dialog-content')]")).isDisplayed();
             WebElement close = driver.findElement(By.xpath("//a[contains(@class , 'modal-dialog-close')]"));
             close.click();
+
             driver.quit();
         }
     }

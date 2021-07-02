@@ -1,9 +1,12 @@
 package testiki;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.html5.LocalStorage;
 import org.openqa.selenium.html5.WebStorage;
@@ -28,8 +31,8 @@ public class AuthorizationTest {
       driver.quit();
     }
     @Test
-    public void Authorization () {
-        helper.CloseAdvertisement();
+    public void authorization () { //посмотреть, в чем тест то?
+        helper.closeAdvertisement();
         LocalStorage local = ((WebStorage) driver).getLocalStorage();
         local.setItem("form_agreement", "confirmed");
         local.setItem("ppm_cart_guid", "8984f72c-26ca-40a0-ae43-f3a75281ce26");
@@ -47,7 +50,14 @@ public class AuthorizationTest {
         local.setItem("_grecaptcha", "09ABU7dzNgYSZpeQGFzLqAiy1RUOSgX8X8goMe_Dh0fqEuLWwW7UyMxuXPyBWpbcfSX_e5mddEgguWzfuBq6T2f3E");
         local.setItem("_ym_retryReqs", "{}");
         driver.navigate().refresh();
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
+        WebElement myAccount = driver.findElement(By.xpath("(//span[contains(@class, 'header-top-right')]//a) [1]"));
+        myAccount.click();
+        Assert.assertTrue(driver.findElement(By.xpath("//div[contains(@class, 'profile-content')]")).isDisplayed());
+
+
+
+
 
 
     }

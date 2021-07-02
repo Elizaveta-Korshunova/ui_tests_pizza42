@@ -11,7 +11,7 @@ public class Helper {
         this.driver = driver;
     }
 
-    public void CloseAdvertisement() {
+    public void closeAdvertisement() {
         try {
             boolean rek = driver.findElement(By.xpath("//div[contains(@class, 'modal-dialog-content')]")).isDisplayed();
             WebElement close = driver.findElement(By.xpath("//a[contains(@class , 'modal-dialog-close')]"));

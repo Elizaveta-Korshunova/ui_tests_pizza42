@@ -38,23 +38,23 @@ public class DeliveryTermsTests {
     }
 
     @Test
-    public void DistrictSouthernOne() throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void districtSouthernOne() throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockPizzaAdditives = driver.findElement(By.xpath("(//a[contains(text(), 'Добавки к пицце')]) [1]"));
         blockPizzaAdditives.click(); // перехожу на вкладку "Добавки к пицце"
         WebElement pineapple = driver.findElement(By.xpath("//*[contains(text(), 'Ананасы консервированные')]"));
         pineapple.click(); // открывать ананасики
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         Thread.sleep(500);
         WebElement bacon = driver.findElement(By.xpath("(//*[contains(text(), 'Бекон')]) [2]"));
         bacon.click(); // открывать бекон
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -66,24 +66,24 @@ public class DeliveryTermsTests {
         districtSouthern.click();// южный
         WebElement minSum = driver.findElement(By.xpath("//div[contains(@class, 'cart-receipt-footer-min-order-price')]")); // Надпись минимальная сумма заказа
         Assert.assertTrue(minSum.isEnabled());
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus();  // удаляем первую позицию в корзине
+        clickHelper.minus();  // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void DistrictSouthernFirst() throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void districtSouthernFirst() throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '24')]"));
         diameter.click(); // выбираю диаметр 24см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -95,22 +95,22 @@ public class DeliveryTermsTests {
         districtSouthern.click();// южный
         WebElement minSumFree = driver.findElement(By.xpath("//div[contains(@class, 'free-delivery-from')]")); // Надпись заказать до бесплатной доставки сумма заказа
         Assert.assertTrue(minSumFree.isEnabled());
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
         Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void DistrictSouthernThree() throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void districtSouthernThree() throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 30см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -134,28 +134,28 @@ public class DeliveryTermsTests {
         catch (Exception exception) {
             System.out.println("Everything is ok");
         }
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
         Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void DistrictCentralOne() throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void districtCentralOne() throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockPizzaAdditives = driver.findElement(By.xpath("(//a[contains(text(), 'Добавки к пицце')]) [1]"));
         blockPizzaAdditives.click(); // перехожу на вкладку "Добавки к пицце"
         WebElement pineapple = driver.findElement(By.xpath("//*[contains(text(), 'Ананасы консервированные')]"));
         pineapple.click(); // открывать ананасики
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         Thread.sleep(500);
         WebElement bacon = driver.findElement(By.xpath("(//*[contains(text(), 'Бекон')]) [2]"));
         bacon.click(); // открывать бекон
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -167,24 +167,24 @@ public class DeliveryTermsTests {
         districtCentral.click();// южный
         WebElement minSum = driver.findElement(By.xpath("//div[contains(@class, 'cart-receipt-footer-min-order-price')]")); // Надпись минимальная сумма заказа
         Assert.assertTrue(minSum.isEnabled());
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus();  // удаляем первую позицию в корзине
+        clickHelper.minus();  // удаляем первую позицию в корзине
         Thread.sleep(2500);
         Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void DistrictCentralFirst() throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void districtCentralFirst() throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 24см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -196,24 +196,24 @@ public class DeliveryTermsTests {
         districtCentral.click();// центральный
         WebElement minSumFree = driver.findElement(By.xpath("//div[contains(@class, 'free-delivery-from')]")); // Надпись заказать до бесплатной доставки сумма заказа
         Assert.assertTrue(minSumFree.isEnabled());
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
         Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void DistrictCentralThree() throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void districtCentralThree() throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 30см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -237,30 +237,30 @@ public class DeliveryTermsTests {
         catch (Exception exception) {
             System.out.println("Everything is ok");
         }
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
         Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void DistrictComisarovoOne() throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void districtComisarovoOne() throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockPizzaAdditives = driver.findElement(By.xpath("(//a[contains(text(), 'Добавки к пицце')]) [1]"));
         blockPizzaAdditives.click(); // перехожу на вкладку "Добавки к пицце"
         WebElement pineapple = driver.findElement(By.xpath("//*[contains(text(), 'Ананасы консервированные')]"));
         pineapple.click(); // открывать ананасики
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         Thread.sleep(500);
         WebElement bacon = driver.findElement(By.xpath("(//*[contains(text(), 'Бекон')]) [2]"));
         bacon.click(); // открывать бекон
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -272,24 +272,24 @@ public class DeliveryTermsTests {
         districtComisarovo.click();// южный
         WebElement minSum = driver.findElement(By.xpath("//div[contains(@class, 'cart-receipt-footer-min-order-price')]")); // Надпись минимальная сумма заказа
         Assert.assertTrue(minSum.isEnabled());
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus();  // удаляем первую позицию в корзине
+        clickHelper.minus();  // удаляем первую позицию в корзине
         Thread.sleep(2500);
         Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void DistrictComisarovoFirst() throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void districtComisarovoFirst() throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 30см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -301,24 +301,24 @@ public class DeliveryTermsTests {
         districtComisarovo.click();// южный
         WebElement minSumFree = driver.findElement(By.xpath("//div[contains(@class, 'free-delivery-from')]")); // Надпись заказать до бесплатной доставки сумма заказа
         Assert.assertTrue(minSumFree.isEnabled());
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
         Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void DistrictComisarovoThree() throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void districtComisarovoThree() throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 30см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -342,30 +342,30 @@ public class DeliveryTermsTests {
         catch (Exception exception) {
             System.out.println("Everything is ok");
         }
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
         Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void DistrictRainbowOne() throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void districtRainbowOne() throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockPizzaAdditives = driver.findElement(By.xpath("(//a[contains(text(), 'Добавки к пицце')]) [1]"));
         blockPizzaAdditives.click(); // перехожу на вкладку "Добавки к пицце"
         WebElement pineapple = driver.findElement(By.xpath("//*[contains(text(), 'Ананасы консервированные')]"));
         pineapple.click(); // открывать ананасики
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         Thread.sleep(500);
         WebElement bacon = driver.findElement(By.xpath("(//*[contains(text(), 'Бекон')]) [2]"));
         bacon.click(); // открывать бекон
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -377,26 +377,26 @@ public class DeliveryTermsTests {
         districtRainbow.click();// радуга
         WebElement minSum = driver.findElement(By.xpath("//div[contains(@class, 'cart-receipt-footer-min-order-price')]")); // Надпись минимальная сумма заказа
         Assert.assertTrue(minSum.isEnabled());
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus();  // удаляем первую позицию в корзине
+        clickHelper.minus();  // удаляем первую позицию в корзине
         Thread.sleep(2500);
         Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void DistrictRainbowFirst() throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void districtRainbowFirst() throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 30см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -408,28 +408,28 @@ public class DeliveryTermsTests {
         districtRainbow.click();// радуга
         WebElement minSumFree = driver.findElement(By.xpath("//div[contains(@class, 'free-delivery-from')]")); // Надпись заказать до бесплатной доставки сумма заказа
         Assert.assertTrue(minSumFree.isEnabled());
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
         Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void DistrictRainbowThree() throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void districtRainbowThree() throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 30см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -453,11 +453,11 @@ public class DeliveryTermsTests {
         catch (Exception exception) {
             System.out.println("Everything is ok");
         }
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
         Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }

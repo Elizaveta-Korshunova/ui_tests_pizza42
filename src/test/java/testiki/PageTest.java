@@ -30,9 +30,9 @@ public class PageTest {
     }
 
     @Test
-    public void Page() {
-        helper.CloseAdvertisement();
-        Assert.assertNotNull(driver.findElement(By.xpath("//h2[contains(@class, 'product-list-tag-title')]")).isDisplayed());
+    public void page() {
+        helper.closeAdvertisement();
+        Assert.assertTrue(driver.findElement(By.xpath("//h2[contains(@class, 'product-list-tag-title')]")).isDisplayed());
     }
 }
 

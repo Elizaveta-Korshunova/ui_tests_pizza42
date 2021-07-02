@@ -38,31 +38,31 @@ public class NegativeTests {
     }
     @Test
     public void OrderingNotName () throws InterruptedException {
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 30см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         WebElement blockPizzaAdditives = driver.findElement(By.xpath("(//a[contains(text(), 'Добавки к пицце')]) [1]"));
         blockPizzaAdditives.click(); // перехожу на вкладку "Добавки к пицце"
         WebElement pineapple = driver.findElement(By.xpath("//*[contains(text(), 'Ананасы консервированные')]"));
         pineapple.click(); // открывать ананасики
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         Thread.sleep(500);
         WebElement bacon = driver.findElement(By.xpath("(//*[contains(text(), 'Бекон')]) [2]"));
         bacon.click(); // открывать бекон
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -85,41 +85,41 @@ public class NegativeTests {
         WebElement buttonOff = driver.findElement(By.xpath("//a[contains(@class, 'button-solid button-large button-md cart-dialog-create-order button-md  button-disabled')]")); // кнопка "Сделать заказ" не активная
         Assert.assertTrue(buttonOff.isEnabled());
         WebElement button = driver.findElement(By.xpath("//a[contains(@class, 'button-solid button-large button-md cart-dialog-create-order button-md')]")); // кнопка "Сделать заказ" активная
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus();  // удаляем первую позицию в корзине
+        clickHelper.minus();  // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void OrderingNotStreet () throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void orderingNotStreet () throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 30см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         WebElement blockPizzaAdditives = driver.findElement(By.xpath("(//a[contains(text(), 'Добавки к пицце')]) [1]"));
         blockPizzaAdditives.click(); // перехожу на вкладку "Добавки к пицце"
         WebElement pineapple = driver.findElement(By.xpath("//*[contains(text(), 'Ананасы консервированные')]"));
         pineapple.click(); // открывать ананасики
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         Thread.sleep(500);
         WebElement bacon = driver.findElement(By.xpath("(//*[contains(text(), 'Бекон')]) [2]"));
         bacon.click(); // открывать бекон
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -141,41 +141,41 @@ public class NegativeTests {
         Thread.sleep(2500);
         WebElement buttonOff = driver.findElement(By.xpath("//a[contains(@class, 'button-solid button-large button-md cart-dialog-create-order button-md  button-disabled')]")); // кнопка "Сделать заказ" не активная
         Assert.assertTrue(buttonOff.isEnabled());
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus();  // удаляем первую позицию в корзине
+        clickHelper.minus();  // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void OrderingNotHouse () throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void orderingNotHouse () throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 30см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         WebElement blockPizzaAdditives = driver.findElement(By.xpath("(//a[contains(text(), 'Добавки к пицце')]) [1]"));
         blockPizzaAdditives.click(); // перехожу на вкладку "Добавки к пицце"
         WebElement pineapple = driver.findElement(By.xpath("//*[contains(text(), 'Ананасы консервированные')]"));
         pineapple.click(); // открывать ананасики
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         Thread.sleep(500);
         WebElement bacon = driver.findElement(By.xpath("(//*[contains(text(), 'Бекон')]) [2]"));
         bacon.click(); // открывать бекон
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -197,41 +197,41 @@ public class NegativeTests {
         Thread.sleep(2500);
         WebElement buttonOff = driver.findElement(By.xpath("//a[contains(@class, 'button-solid button-large button-md cart-dialog-create-order button-md  button-disabled')]")); // кнопка "Сделать заказ" не активная
         Assert.assertTrue(buttonOff.isEnabled());
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus();  // удаляем первую позицию в корзине
+        clickHelper.minus();  // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void OrderingChangeDistrict () throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void orderingChangeDistrict () throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 30см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         WebElement blockPizzaAdditives = driver.findElement(By.xpath("(//a[contains(text(), 'Добавки к пицце')]) [1]"));
         blockPizzaAdditives.click(); // перехожу на вкладку "Добавки к пицце"
         WebElement pineapple = driver.findElement(By.xpath("//*[contains(text(), 'Ананасы консервированные')]"));
         pineapple.click(); // открывать ананасики
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         Thread.sleep(500);
         WebElement bacon = driver.findElement(By.xpath("(//*[contains(text(), 'Бекон')]) [2]"));
         bacon.click(); // открывать бекон
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -258,41 +258,41 @@ public class NegativeTests {
         Assert.assertTrue(buttonOff.isEnabled());
         WebElement minSum = driver.findElement(By.xpath("//div[contains(@class, 'cart-receipt-footer-min-order-price')]")); // Надпись минимальная сумма заказа
         Assert.assertTrue(minSum.isEnabled());
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus();  // удаляем первую позицию в корзине
+        clickHelper.minus();  // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void OrderingNotChekOne () throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void orderingNotChekOne () throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 30см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         WebElement blockPizzaAdditives = driver.findElement(By.xpath("(//a[contains(text(), 'Добавки к пицце')]) [1]"));
         blockPizzaAdditives.click(); // перехожу на вкладку "Добавки к пицце"
         WebElement pineapple = driver.findElement(By.xpath("//*[contains(text(), 'Ананасы консервированные')]"));
         pineapple.click(); // открывать ананасики
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         Thread.sleep(500);
         WebElement bacon = driver.findElement(By.xpath("(//*[contains(text(), 'Бекон')]) [2]"));
         bacon.click(); // открывать бекон
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -320,41 +320,41 @@ public class NegativeTests {
         WebElement buttonOff = driver.findElement(By.xpath("//a[contains(@class, 'button-solid button-large button-md cart-dialog-create-order button-md  button-disabled')]")); // кнопка "Сделать заказ" не активная
         Assert.assertTrue(buttonOff.isEnabled());
         WebElement button = driver.findElement(By.xpath("//a[contains(@class, 'button-solid button-large button-md cart-dialog-create-order button-md')]")); // кнопка "Сделать заказ" активная
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus();  // удаляем первую позицию в корзине
+        clickHelper.minus();  // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
     @Test
-    public void OrderingNotChekFirst () throws InterruptedException {
-        helper.CloseAdvertisement();
+    public void orderingNotChekFirst () throws InterruptedException {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
-        helper.CloseAdvertisement();
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click(); // перехожу на вкладку "Десерт"
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click(); // открывать маскарпоне
         WebElement diameter = driver.findElement(By.xpath("//a[contains(text(), '30')]"));
         diameter.click(); // выбираю диаметр 30см
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         WebElement blockPizzaAdditives = driver.findElement(By.xpath("(//a[contains(text(), 'Добавки к пицце')]) [1]"));
         blockPizzaAdditives.click(); // перехожу на вкладку "Добавки к пицце"
         WebElement pineapple = driver.findElement(By.xpath("//*[contains(text(), 'Ананасы консервированные')]"));
         pineapple.click(); // открывать ананасики
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
-        clickHelper.Close();
+        clickHelper.close();
         Thread.sleep(500);
         WebElement bacon = driver.findElement(By.xpath("(//*[contains(text(), 'Бекон')]) [2]"));
         bacon.click(); // открывать бекон
         Thread.sleep(500);
-        clickHelper.Buy();
+        clickHelper.buy();
         Thread.sleep(500);
         WebElement basket = driver.findElement(By.xpath("//span[contains(@class, 'cart-widget-container')]"));
         basket.click(); // перехожу в корзину
@@ -382,13 +382,13 @@ public class NegativeTests {
         WebElement buttonOff = driver.findElement(By.xpath("//a[contains(@class, 'button-solid button-large button-md cart-dialog-create-order button-md  button-disabled')]")); // кнопка "Сделать заказ" не активная
         Assert.assertTrue(buttonOff.isEnabled());
         WebElement button = driver.findElement(By.xpath("//a[contains(@class, 'button-solid button-large button-md cart-dialog-create-order button-md')]")); // кнопка "Сделать заказ" активная
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus();  // удаляем первую позицию в корзине
+        clickHelper.minus();  // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        clickHelper.Minus(); // удаляем первую позицию в корзине
+        clickHelper.minus(); // удаляем первую позицию в корзине
         Thread.sleep(2500);
-        Assert.assertNotNull(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'В вашей корзине нет ни одного товара')]")).isDisplayed());
     }
 
 }

@@ -30,12 +30,12 @@ public class ProductDessertTest {
        driver.quit();
     }
     @Test
-    public void ProductDesserts () {
-        helper.CloseAdvertisement();
+    public void productDesserts () {
+        helper.closeAdvertisement();
         WebElement blockDesserts = driver.findElement(By.xpath("(//a[contains(text(), 'Десерт')]) [1]"));
         blockDesserts.click();
         WebElement productDesserts = driver.findElement(By.xpath("//*[contains(text(), 'Маскарпоне с малиной')]"));
         productDesserts.click();
-        Assert.assertNotNull(driver.findElement(By.xpath("//h1[contains(text(), 'Маскарпоне с малиной')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//h1[contains(text(), 'Маскарпоне с малиной')]")).isDisplayed());
     }
 }

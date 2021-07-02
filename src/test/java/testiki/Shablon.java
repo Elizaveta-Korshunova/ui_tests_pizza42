@@ -27,13 +27,14 @@ public class Shablon {
     }
     @After
     public void over () {
-      //  driver.quit();
+      driver.quit();
     }
 
     @Test
-    public void Desserts() {
-        helper.CloseAdvertisement();
+    public void desserts() {
+        helper.closeAdvertisement();
         authorization.authorization(driver);
+
 
     }
 }
